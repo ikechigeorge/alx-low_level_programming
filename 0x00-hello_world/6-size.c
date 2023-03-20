@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * main - A program that prints the size of various type on the computer.
+ * main - Entry point
  * Return: 0 (Success)
  */
 int main(void)
