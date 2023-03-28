@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * reset_to_98 - update the value of n to 98
- * @n: input
- * Return: n
+ * reset_to_98 -  A function that updates the value it points to 98
+ * @n: the value to be replace
+ * Return: 0
+ *
  */
 void reset_to_98(int *n)
 {
