@@ -3,7 +3,7 @@
 /**
  * *_memset- A function that fills memory
  * @s: A pointer to the memory area
- * @b; The constant byte to be used
+ * @b: The constant byte to be used
  * @n: The number of bytes to be filled
  *
  * Return: change array with new value for n bytes
