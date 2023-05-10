@@ -9,7 +9,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int tmp = n ^ m;
+	unsigned p_bits.clong int tmp = n ^ m;
 	unsigned int count = 0;
 
 	while (tmp > 0)
