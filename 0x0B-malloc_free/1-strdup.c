@@ -28,5 +28,6 @@ char *_strdup(char *str)
 		copy[zod] = str[zod];
 	}
 
+	copy[strlen(str)] = '\0';
 	return (copy);
 }
