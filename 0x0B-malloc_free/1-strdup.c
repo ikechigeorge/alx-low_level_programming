@@ -10,7 +10,7 @@
 
 char *_strdup(char *str)
 {
-	int zod;
+	int zod, i;
 	char *copy;
 
 	if (str == NULL)
@@ -18,7 +18,13 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	copy = malloc((strlen(str) + 1) * sizeof(str));
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+
+	copy = malloc(sizeof(char) * (i + 1));
 	if (copy == NULL)
 	{
 		return (NULL);
@@ -28,6 +34,5 @@ char *_strdup(char *str)
 		copy[zod] = str[zod];
 	}
 
-	copy[strlen(str)] = '\0';
 	return (copy);
 }
