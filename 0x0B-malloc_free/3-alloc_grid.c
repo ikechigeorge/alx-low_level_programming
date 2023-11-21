@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include "main.h"
 
 /**
  * **alloc_grid - creates a two dimensional array of ints
@@ -9,42 +8,36 @@
  * Return: pointer to the created matrix (Success)
  * or NULL (Error)
  */
-
 int **alloc_grid(int width, int height)
 {
-	int **grid;
-	int i;
-	int zod;
+	int **my_array;
+	int i, j;
 
-	if (width <= 0 || height <= 0)
-	{
+	if (height <= 0 || width <= 0)
 		return (NULL);
-	}
 
-	grid = (int **) malloc(height * sizeof(int *));
-	if (grid == NULL)
-	{
+	my_array = (int **) malloc(sizeof(int *) * height);
+
+	if (my_array == NULL)
 		return (NULL);
+	for (i = 0; i < height; i++)
+	{
+		my_array[i] = (int *) malloc(sizeof(int) * width);
+		if (my_array[i] == NULL)
+		{
+			free(my_array);
+			for (j = 0; j <= i; j++)
+			free(my_array[j]);
+			return (NULL);
+		}
 	}
 
 	for (i = 0; i < height; i++)
 	{
-		grid[i] = (int *) malloc(width * sizeof(int));
-		if (grid[i] == NULL)
+		for (j = 0; j < width; j++)
 		{
-			for (zod = 0; zod < i; zod++)
-			{
-				free(grid[zod]);
-				free(grid);
-				return (NULL);
-			}
-		}
-
-		for (zod = 0; zod < width; zod++)
-		{
-			grid[i][zod] = 0;
+			my_array[i][j] = 0;
 		}
 	}
-
-	return (grid);
+	return (my_array);
 }
